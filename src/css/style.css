@@ -1,0 +1,114 @@
+:root {
+  --hue1: 25;
+  --hue2: 160;
+
+  --accent-color1: hsl(var(--hue1), 90%, 60%);
+  --accent-color2: hsl(var(--hue2), 85%, 35%);
+
+  --accent-color1-light: hsl(var(--hue2), 60%, 60%);
+  --accent-color2-light: hsl(var(--hue2), 60%, 63%);
+
+  --accent-color1-dark: hsl(var(--hue1), 30%, 50%);
+
+  --mono-color: #f2f2f2;
+  --mono-color-2: #ececec;
+  --mono-color-mid: rgba(85, 85, 85, 0.4);
+  --mono-color-dark: rgb(77, 77, 77);
+  --header-height: 7vh;
+  font-family: consolas;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  /* border: 1px solid red; */
+}
+.none {
+  display: none;
+}
+button {
+  background: none;
+  border: none;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+body {
+  height: calc(100vh - var(--header-height));
+  background-color: var(--mono);
+  background: radial-gradient(
+      circle,
+      transparent 20%,
+      var(--mono-color) 20%,
+      var(--mono-color) 80%,
+      transparent 80%,
+      transparent
+    ),
+    radial-gradient(
+        circle,
+        transparent 20%,
+        var(--mono-color) 20%,
+        var(--mono-color) 80%,
+        transparent 80%,
+        transparent
+      )
+      57.5px 57.5px,
+    linear-gradient(var(--mono-color-2) 4px, transparent 4px) 0 -2px,
+    linear-gradient(90deg, var(--mono-color-2) 4px, var(--mono-color) 4px) -2px 0;
+  background-size: 115px 115px, 115px 115px, 57.5px 57.5px, 57.5px 57.5px;
+}
+
+.main {
+  display: flex;
+  height: 100%;
+}
+
+.sidebar {
+  background-color: var(--mono-color-2);
+  flex: 1;
+  min-width: 50px;
+  max-width: 150px;
+  height: 100%;
+}
+
+.link {
+  height: max-content;
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin: 10px;
+  gap: 5px;
+  font-size: 1.2em;
+}
+
+.link > a {
+  text-decoration: none;
+  color: black;
+}
+
+.link > svg:hover {
+  transform: rotate(360deg);
+  transition: all .5s;
+}
+
+.center {
+  flex: 5;
+  font-size: 3rem;
+  text-align: left;
+  display: flex;
+  justify-content: top;
+  align-items: left;
+  flex-direction: column;
+  padding-left: 2em;
+}
+
+.center > h2 {
+  margin-top: 5vh;
+  font-size: 0.8em;
+}
+
+.current-date {
+  font-size: 0.5em;
+  color: var(--mono-color-mid);
+}
